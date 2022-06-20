@@ -23,5 +23,11 @@ namespace MockLight
         {
             Parameters.Add(Count, parameters);
         }
+
+        public void ClearCalls()
+        {
+            Count = 0;
+            Parameters = new Dictionary<int, IEnumerable<object>>();
+        }
     }
 }
