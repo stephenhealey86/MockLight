@@ -3,7 +3,7 @@ using Microsoft.Extensions.Options;
 
 namespace MockLight.Mocks
 {
-    public class OptionsMock<T> : Mock, IOptions<T> where T : class
+    public class OptionsMock<T> : Mock, IOptions<T> where T : class, new()
     {
         public T Value => Mocks.Value;
     }
@@ -23,7 +23,7 @@ namespace MockLight.Mocks
         }
     }
 
-    public class OptionsSnapshotMock<T> : Mock, IOptionsSnapshot<T> where T : class
+    public class OptionsSnapshotMock<T> : Mock, IOptionsSnapshot<T> where T : class, new()
     {
         public T Value => Mocks.Value;
 
