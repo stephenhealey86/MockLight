@@ -6,9 +6,9 @@ namespace MockLight
     {
         public int Count { get; set; }
         public IDictionary<int, IEnumerable<object>> Parameters { get; set; }
-        public VerifyMethod()
+        public VerifyMethod(int count = 1)
         {
-            Count = 1;
+            Count = count;
             Parameters = new Dictionary<int, IEnumerable<object>>();
         }
 

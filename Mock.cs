@@ -370,13 +370,17 @@ namespace MockLight
         /// <returns><see cref="VerifyObject"/></returns>
         public VerifyObject MockVerify(string name)
         {
+            if (!_mocker.ContainsKey(name))
+            {
+                throw new Exception($"Setup has not been called for {name}.");
+            }
             if (_calls.ContainsKey(name) && _calls[name] is VerifyMethod verify)
             {
                 return new VerifyObject(verify);
             }
             else
             {
-                throw new Exception($"Setup has not been called for {name}.");
+                return new VerifyObject(new VerifyMethod(0));
             }
         }
 
