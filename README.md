@@ -1,7 +1,11 @@
 # MockLight
 MockLight is a light weight C# class library that enables mocking of interfaces to aid unit testing an can be used in a Linux environment.
 
-## Creating a mock class implementation from an interface
+<a name="usage"/>
+
+## Usage
+
+### Creating a mock class implementation from an interface
 ```cs
 // Interface to mock
 public interface IAccount
@@ -31,7 +35,7 @@ public class MockAccount : Mock, IAccount
     }
 }
 ```
-## Changing a mock method / getter implementation
+### Changing a mock method / getter implementation
 Below is a demo of how to change mocked class methods and getters. This shows how to use the various overloads of the Mock class Setup method.
 ```cs
 public class TestClassMocking
@@ -80,7 +84,7 @@ public class TestClassMocking
     }
 }
 ```
-## Verifying mocked objects
+### Verifying mocked objects
 Below is a demo of how to verify mocked methods and getters.
 ```cs
 public class TestClassVerifying
@@ -104,3 +108,11 @@ public class TestClassVerifying
     }
 }
 ```
+
+<a name="author"/>
+
+## Author
+
+**Stephen Healey**
+
+- [github/stephenhealey86](https://github.com/stephenhealey86)
