@@ -1,9 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <Version>1.0.1.0</Version>
+    <PackageId>MockLight</PackageId>
+    <Version>1.0.2.0</Version>
     <Authors>Stephen Healey</Authors>
-    <Description>Light weight .NET core mocking library, can be used in Linux and Windows environments.</Description>
+    <Description>MockLight is a light weight C# class library that enables mocking of interfaces to aid unit testing an can be used in a Linux or Windows environment.</Description>
+    <Title>MockLight</Title>
+    <PackageDescription>MockLight is a light weight C# class library that enables mocking of interfaces to aid unit testing an can be used in a Linux or Windows environment.</PackageDescription>
+    <PackageTags>Unit Testing; Mock; Mocking; MockLight</PackageTags>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Options" Version="5.0.0"/>

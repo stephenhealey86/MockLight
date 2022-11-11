@@ -33,7 +33,7 @@ namespace MockLight.Mocks
         {
             if (!clients.ContainsKey(name))
             {
-                var handler =  new MockHttpMessageHandler();
+                var handler = new MockHttpMessageHandler();
                 var clientMock = new ClientMock
                 {
                     Client = new HttpClient(handler),
@@ -49,14 +49,19 @@ namespace MockLight.Mocks
         /// </summary>
         /// <param name="setup">A <see cref="Func<HttpRequestMessage, CancellationToken, Task<HttpResponseMessage>>"/> which will be called by the <see cref="HttpMessageHandler"/> SendAsync method</param>
         /// <returns><see cref="void"/></returns>
-        public void MockSetup(string name, Func<HttpRequestMessage, CancellationToken, Task<HttpResponseMessage>> setup)
+        public void MockSetup(string name, Func<HttpRequestMessage, CancellationToken, Task<HttpResponseMessage>> setup, Action<HttpClient> options)
         {
             if (!clients.ContainsKey(name))
             {
-                var handler =  new MockHttpMessageHandler();
+                var handler = new MockHttpMessageHandler();
+                var client = new HttpClient(handler);
+                if (options is not null)
+                {
+                    options(client);
+                }
                 var clientMock = new ClientMock
                 {
-                    Client = new HttpClient(handler),
+                    Client = client,
                     Handler = handler
                 };
                 clients.Add(name, clientMock);

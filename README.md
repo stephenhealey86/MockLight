@@ -1,5 +1,5 @@
 # MockLight
-MockLight is a light weight C# class library that enables mocking of interfaces to aid unit testing an can be used in a Linux environment.
+MockLight is a light weight C# class library that enables mocking of interfaces to aid unit testing an can be used in a Linux or Windows environment.
 
 <a name="usage"/>
 
